@@ -1,0 +1,148 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>
+        <ion-icon name="arrow-round-back" (click)="back()"></ion-icon>
+        PHP Quiz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+        <div class="test" *ngIf="t">
+        <ion-radio-group [(ngModel)]= "question1">
+          <ion-list-header>
+            <ion-label>What does PHP stand for?</ion-label>
+          </ion-list-header>
+  
+          <ion-item>
+              <ion-radio slot="start" color="success" value="A correct"  ></ion-radio>
+            <ion-label>A - Hypertext Preprocessor</ion-label> 
+          </ion-item>
+  
+          <ion-item >
+              <ion-radio slot="start" color="success" value="B incorrect"  ></ion-radio>
+            <ion-label>B - Private Home Page</ion-label>
+          </ion-item>
+  
+          <ion-item>
+              <ion-radio slot="start" color="success" value="C incorrect"  ></ion-radio>
+            <ion-label>C - Personal Hypertext Processor</ion-label>  
+          </ion-item>
+        </ion-radio-group>
+  
+        <ion-radio-group [(ngModel)]="question2">
+          <ion-list-header>
+            <ion-label>How do you write "Hello World" in PHP</ion-label>
+          </ion-list-header>
+  
+          <ion-item>
+              <ion-radio slot="start" color="success" value="A incorrect"></ion-radio>
+            <ion-label>A - "Hello World";</ion-label>
+          </ion-item>
+  
+          <ion-item>
+            <ion-radio slot="start" color="success" value="B incorrect"></ion-radio>
+            <ion-label>B - Document.Write("Hello World");</ion-label>
+          </ion-item>
+  
+          <ion-item>
+            <ion-radio slot="start" color="success" value="C correct"></ion-radio>
+            <ion-label>C - echo "Hello World";</ion-label>
+          </ion-item>
+  
+        </ion-radio-group>
+  
+        <ion-radio-group [(ngModel)]="question3">
+            <ion-list-header>
+              <ion-label>All variables in PHP start with which symbol?</ion-label>
+            </ion-list-header>
+  
+            <ion-item>
+                <ion-radio slot="start" color="success" value="A incorrect"></ion-radio>
+              <ion-label>A - 	&</ion-label>
+              
+            </ion-item>
+    
+            <ion-item>
+                <ion-radio slot="start" color="success" value="B correct"></ion-radio>
+              <ion-label>B - $</ion-label>
+              
+            </ion-item>
+    
+            <ion-item>
+                <ion-radio slot="start" color="success" value="C incorrect"></ion-radio>
+              <ion-label>C - !</ion-label>  
+            </ion-item>
+          </ion-radio-group>
+  
+          <ion-radio-group [(ngModel)]="question4">
+              <ion-list-header>
+                <ion-label>What is the correct way to create a function in PHP?</ion-label>
+              </ion-list-header>
+    
+              <ion-item>
+                  <ion-radio slot="start" color="success" value="A incorrect"></ion-radio>
+                <ion-label>A - new_function myFunction()</ion-label>
+                
+              </ion-item>
+      
+              <ion-item>
+                  <ion-radio slot="start" color="success" value="B correct"></ion-radio>
+                <ion-label>B - function myFunction()</ion-label>
+                
+              </ion-item>
+      
+              <ion-item>
+                  <ion-radio slot="start" color="success" value="C incorrect"></ion-radio>
+                <ion-label>C - create myFunction()</ion-label>  
+              </ion-item>
+            </ion-radio-group>
+  
+            <ion-radio-group [(ngModel)]="question5"> 
+                <ion-list-header>
+                  <ion-label>How do you get information from a form that is submitted using the "get" method</ion-label>
+                </ion-list-header>
+      
+                <ion-item>
+                    <ion-radio slot="start" color="success" value="A incorrect"></ion-radio>
+                  <ion-label>A - Request.QueryString;</ion-label>
+                  
+                </ion-item>
+        
+                <ion-item>
+                    <ion-radio slot="start" color="success" value="B incorrect"></ion-radio>
+                  <ion-label>B - Request.Form;</ion-label>
+                  
+                </ion-item>
+        
+                <ion-item>
+                    <ion-radio slot="start" color="success" value="C correct"></ion-radio>
+                  <ion-label>C - $_GET[];</ion-label>  
+                </ion-item>
+              </ion-radio-group>
+              <ion-button expand="block" color="secondary" (click) = "submit()">Submit Test</ion-button>
+            </div>
+      </ion-list>
+       
+   
+  <div class ="results" *ngIf="test2">
+   <h1>Results</h1>
+  
+    <h3> Your answer is as follows:</h3>
+  
+   <p>Question 1 is {{question1}}</p>
+  
+   <p> Question 2 is {{question2}} </p>
+  
+   <p>Question 3 is {{this.question3}} </p>
+  
+   <p> Question 4 is {{this.question4}} </p>
+  
+   <p>Question 5 is {{this.question5}} </p>
+  
+   <h4><b>Total {{this.score}}</b></h4>
+   <!-- <ion-button expand="block" color="secondary" (click) = "back()">Menu</ion-button> -->
+  </div>
+
+</ion-content>

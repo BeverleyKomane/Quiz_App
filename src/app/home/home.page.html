@@ -1,0 +1,152 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title><ion-icon name="arrow-round-back" (click)="back()"></ion-icon>
+      Quiz App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-content>
+    <ion-list>
+      <div class="test" *ngIf="t">
+      <ion-radio-group [(ngModel)]= "question1">
+        <ion-list-header>
+          <ion-label>Which HTML element defines the title of a document?</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+            <ion-radio slot="start" color="success" value="A incorrect"  ></ion-radio>
+          <ion-label>A - &lsaquo;meta&rsaquo;</ion-label> 
+        </ion-item>
+
+        <ion-item >
+            <ion-radio slot="start" color="success" value="B correct"  ></ion-radio>
+          <ion-label>B - &lsaquo;title&rsaquo;</ion-label>
+        </ion-item>
+
+        <ion-item>
+            <ion-radio slot="start" color="success" value="C incorrect"  ></ion-radio>
+          <ion-label>C - &lsaquo;head&rsaquo;</ion-label>  
+        </ion-item>
+      </ion-radio-group>
+      
+      <ion-radio-group [(ngModel)]="question2">
+        <ion-list-header>
+          <ion-label>Who is making the Web standards?</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+            <ion-radio slot="start" color="success" value="A incorrect"></ion-radio>
+          <ion-label>A - Google</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-radio slot="start" color="success" value="B incorrect"></ion-radio>
+          <ion-label>B - Microsoft</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-radio slot="start" color="tertiary" value="C incorrect"></ion-radio>
+          <ion-label>C - Mozilla</ion-label>
+        </ion-item>
+
+        <ion-item>
+            <ion-radio slot="start" color="success" value="D correct"></ion-radio>
+          <ion-label>D - The World Wide Web Consortium</ion-label>
+        </ion-item>
+      </ion-radio-group>
+
+      <ion-radio-group [(ngModel)]="question3">
+          <ion-list-header>
+            <ion-label>What is the correct HTML element for inserting a line break?</ion-label>
+          </ion-list-header>
+
+          <ion-item>
+              <ion-radio slot="start" color="success" value="A incorrect"></ion-radio>
+            <ion-label>A - 	&lsaquo;lb&rsaquo;</ion-label>
+            
+          </ion-item>
+  
+          <ion-item>
+              <ion-radio slot="start" color="success" value="B correct"></ion-radio>
+            <ion-label>B - &lsaquo;br&rsaquo;</ion-label>
+            
+          </ion-item>
+  
+          <ion-item>
+              <ion-radio slot="start" color="success" value="C incorrect"></ion-radio>
+            <ion-label>C - &lsaquo;break &rsaquo;</ion-label>  
+          </ion-item>
+        </ion-radio-group>
+
+        <ion-radio-group [(ngModel)]="question4">
+            <ion-list-header>
+              <ion-label>Choose the correct HTML element to define emphasized text</ion-label>
+            </ion-list-header>
+  
+            <ion-item>
+                <ion-radio slot="start" color="success" value="A correct"></ion-radio>
+              <ion-label>A - &lsaquo;em&rsaquo;</ion-label>
+              
+            </ion-item>
+    
+            <ion-item>
+                <ion-radio slot="start" color="success" value="B incorrect"></ion-radio>
+              <ion-label>B - &lsaquo;i&rsaquo;</ion-label>
+              
+            </ion-item>
+    
+            <ion-item>
+                <ion-radio slot="start" color="success" value="C incorrect"></ion-radio>
+              <ion-label>C - &lsaquo;italic&rsaquo;</ion-label>  
+            </ion-item>
+          </ion-radio-group>
+
+          <ion-radio-group [(ngModel)]="question5"> 
+              <ion-list-header>
+                <ion-label>What is the correct HTML for making a text area?</ion-label>
+              </ion-list-header>
+    
+              <ion-item>
+                  <ion-radio slot="start" color="success" value="A correct"></ion-radio>
+                <ion-label>A - &lsaquo;textarea&rsaquo;</ion-label>
+                
+              </ion-item>
+      
+              <ion-item>
+                  <ion-radio slot="start" color="success" value="B incorrect"></ion-radio>
+                <ion-label>B - &lsaquo;input type = "textbox"&rsaquo;</ion-label>
+                
+              </ion-item>
+      
+              <ion-item>
+                  <ion-radio slot="start" color="success" value="C incorrect"></ion-radio>
+                <ion-label>C - &lsaquo;input type="textarea"&rsaquo;</ion-label>  
+              </ion-item>
+            </ion-radio-group>
+            <ion-button expand="block" color="secondary" (click) = "submit()">Submit Test</ion-button>
+          </div>
+    </ion-list>
+     
+ 
+<div class ="results" *ngIf="test1">
+ <h1>Results</h1>
+
+  <h3> Your answer is as follows:</h3>
+
+ <p>Question 1 is {{question1}}</p>
+
+ <p> Question 2 is {{question2}} </p>
+
+ <p>Question 3 is {{this.question3}} </p>
+
+ <p> Question 4 is {{this.question4}} </p>
+
+ <p>Question 5 is {{this.question5}} </p>
+
+ <h4><b>Total {{this.score}} /5</b></h4>
+</div>
+
+</ion-content>
